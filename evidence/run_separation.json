@@ -1,0 +1,8 @@
+{
+  "qwen35_runs": [
+    {"id": "high_v2_grpo60", "steps": 60, "score_source": true},
+    {"id": "earlier_grpo87", "steps": 87, "score_source": false},
+    {"id": "high_v2_32k_grpo178", "steps": 178, "score_source": false}
+  ]
+}
+

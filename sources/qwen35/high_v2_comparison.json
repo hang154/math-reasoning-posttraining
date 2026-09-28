@@ -1,0 +1,299 @@
+{
+  "scores": {
+    "base": {
+      "hard": {
+        "count": 128,
+        "correct": 99,
+        "by_dataset": {
+          "mmlu_pro": {
+            "count": 64,
+            "correct": 60
+          },
+          "musr": {
+            "count": 64,
+            "correct": 39
+          }
+        }
+      },
+      "bbeh": {
+        "count": 32,
+        "correct": 19,
+        "by_dataset": {
+          "bbeh": {
+            "count": 32,
+            "correct": 19
+          }
+        }
+      }
+    },
+    "high_v1_sft": {
+      "hard": {
+        "count": 128,
+        "correct": 102,
+        "by_dataset": {
+          "mmlu_pro": {
+            "count": 64,
+            "correct": 59
+          },
+          "musr": {
+            "count": 64,
+            "correct": 43
+          }
+        }
+      },
+      "bbeh": {
+        "count": 32,
+        "correct": 19,
+        "by_dataset": {
+          "bbeh": {
+            "count": 32,
+            "correct": 19
+          }
+        }
+      }
+    },
+    "high_v1_grpo": {
+      "hard": {
+        "count": 128,
+        "correct": 104,
+        "by_dataset": {
+          "mmlu_pro": {
+            "count": 64,
+            "correct": 61
+          },
+          "musr": {
+            "count": 64,
+            "correct": 43
+          }
+        }
+      },
+      "bbeh": {
+        "count": 32,
+        "correct": 19,
+        "by_dataset": {
+          "bbeh": {
+            "count": 32,
+            "correct": 19
+          }
+        }
+      }
+    },
+    "high_v2_sft": {
+      "hard": {
+        "count": 128,
+        "correct": 103,
+        "by_dataset": {
+          "mmlu_pro": {
+            "count": 64,
+            "correct": 59
+          },
+          "musr": {
+            "count": 64,
+            "correct": 44
+          }
+        }
+      },
+      "bbeh": {
+        "count": 32,
+        "correct": 16,
+        "by_dataset": {
+          "bbeh": {
+            "count": 32,
+            "correct": 16
+          }
+        }
+      }
+    },
+    "high_v2_grpo": {
+      "hard": {
+        "count": 128,
+        "correct": 106,
+        "by_dataset": {
+          "mmlu_pro": {
+            "count": 64,
+            "correct": 61
+          },
+          "musr": {
+            "count": 64,
+            "correct": 45
+          }
+        }
+      },
+      "bbeh": {
+        "count": 32,
+        "correct": 19,
+        "by_dataset": {
+          "bbeh": {
+            "count": 32,
+            "correct": 19
+          }
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "high_v2_sft_vs_base": {
+      "hard": {
+        "shared": 128,
+        "improved": [
+          "mmlu_pro_engineering_11975",
+          "mmlu_pro_math_09033",
+          "musr_murder_mysteries_0071",
+          "musr_murder_mysteries_0098",
+          "musr_murder_mysteries_0154",
+          "musr_murder_mysteries_0207",
+          "musr_murder_mysteries_0232",
+          "musr_object_placements_0010"
+        ],
+        "regressed": [
+          "mmlu_pro_chemistry_04175",
+          "mmlu_pro_engineering_11896",
+          "mmlu_pro_math_08145",
+          "musr_team_allocation_0223"
+        ],
+        "net": 4
+      },
+      "bbeh": {
+        "shared": 32,
+        "improved": [],
+        "regressed": [
+          "bbeh_0759",
+          "bbeh_3489",
+          "bbeh_4129"
+        ],
+        "net": -3
+      }
+    },
+    "high_v2_grpo_vs_base": {
+      "hard": {
+        "shared": 128,
+        "improved": [
+          "mmlu_pro_engineering_11975",
+          "musr_murder_mysteries_0071",
+          "musr_murder_mysteries_0098",
+          "musr_murder_mysteries_0154",
+          "musr_murder_mysteries_0207",
+          "musr_murder_mysteries_0232",
+          "musr_object_placements_0010",
+          "musr_object_placements_0138",
+          "musr_object_placements_0184"
+        ],
+        "regressed": [
+          "musr_object_placements_0079",
+          "musr_team_allocation_0223"
+        ],
+        "net": 7
+      },
+      "bbeh": {
+        "shared": 32,
+        "improved": [
+          "bbeh_1779",
+          "bbeh_3789",
+          "bbeh_4299"
+        ],
+        "regressed": [
+          "bbeh_0759",
+          "bbeh_3889",
+          "bbeh_4099"
+        ],
+        "net": 0
+      }
+    },
+    "high_v2_sft_vs_high_v1_sft": {
+      "hard": {
+        "shared": 128,
+        "improved": [
+          "mmlu_pro_engineering_11856",
+          "mmlu_pro_engineering_12029",
+          "musr_murder_mysteries_0068",
+          "musr_murder_mysteries_0071",
+          "musr_murder_mysteries_0098",
+          "musr_murder_mysteries_0207"
+        ],
+        "regressed": [
+          "mmlu_pro_chemistry_04175",
+          "mmlu_pro_math_08145",
+          "musr_murder_mysteries_0073",
+          "musr_object_placements_0138",
+          "musr_team_allocation_0223"
+        ],
+        "net": 1
+      },
+      "bbeh": {
+        "shared": 32,
+        "improved": [],
+        "regressed": [
+          "bbeh_0853",
+          "bbeh_3489",
+          "bbeh_4129"
+        ],
+        "net": -3
+      }
+    },
+    "high_v2_grpo_vs_high_v1_grpo": {
+      "hard": {
+        "shared": 128,
+        "improved": [
+          "mmlu_pro_engineering_11896",
+          "musr_murder_mysteries_0068",
+          "musr_murder_mysteries_0071",
+          "musr_murder_mysteries_0129",
+          "musr_murder_mysteries_0232",
+          "musr_object_placements_0184"
+        ],
+        "regressed": [
+          "mmlu_pro_math_09033",
+          "musr_murder_mysteries_0073",
+          "musr_object_placements_0079",
+          "musr_team_allocation_0223"
+        ],
+        "net": 2
+      },
+      "bbeh": {
+        "shared": 32,
+        "improved": [
+          "bbeh_1779",
+          "bbeh_4299"
+        ],
+        "regressed": [
+          "bbeh_3889",
+          "bbeh_4099"
+        ],
+        "net": 0
+      }
+    },
+    "high_v2_grpo_vs_high_v2_sft": {
+      "hard": {
+        "shared": 128,
+        "improved": [
+          "mmlu_pro_chemistry_04175",
+          "mmlu_pro_engineering_11896",
+          "mmlu_pro_math_08145",
+          "musr_object_placements_0138",
+          "musr_object_placements_0184"
+        ],
+        "regressed": [
+          "mmlu_pro_math_09033",
+          "musr_object_placements_0079"
+        ],
+        "net": 3
+      },
+      "bbeh": {
+        "shared": 32,
+        "improved": [
+          "bbeh_1779",
+          "bbeh_3489",
+          "bbeh_3789",
+          "bbeh_4129",
+          "bbeh_4299"
+        ],
+        "regressed": [
+          "bbeh_3889",
+          "bbeh_4099"
+        ],
+        "net": 3
+      }
+    }
+  },
+  "bbeh_warning": "Common-stop32 is a paired diagnostic conditioned on eight earlier runs, not an absolute BBEH estimate."
+}

@@ -1,0 +1,82 @@
+{
+  "generated": "2026-09-28",
+  "claims": [
+    {
+      "id": "qwen35_high_v2_dataset",
+      "status": "VERIFIED",
+      "claim": "535 eligible unique high-difficulty four-point items; 534 train and 1 eval",
+      "sources": [
+        "sources/qwen35/high_v2_sft_4gpu_run_manifest.json",
+        "sources/qwen35/high_v2_grpo60_run_manifest.json"
+      ]
+    },
+    {
+      "id": "qwen35_high_v2_eval128",
+      "status": "VERIFIED",
+      "claim": "Base 99/128, SFT 103/128, GRPO 106/128; MuSR 39/64, 44/64, 45/64",
+      "sources": ["sources/qwen35/high_v2_comparison.json"]
+    },
+    {
+      "id": "qwen35_unseen_bbeh61",
+      "status": "VERIFIED_WITH_SINGLE_SEED_CAVEAT",
+      "claim": "Base 33/61, SFT 36/61, GRPO 41/61 under documented 64k recommended sampling",
+      "sources": ["sources/qwen35/BBEH_UNSEEN61_THINKING64K_QWEN_RECOMMENDED_20260809.md"]
+    },
+    {
+      "id": "qwen35_87step_run",
+      "status": "VERIFIED_SEPARATE_RUN",
+      "claim": "87 logged optimizer steps, 4310.6635 seconds, LoRA r16 alpha32",
+      "sources": [
+        "sources/qwen35/earlier_87step_grpo_run_manifest.json",
+        "sources/qwen35/earlier_87step_adapter_config.json"
+      ]
+    },
+    {
+      "id": "qwen35_32k_178step_run",
+      "status": "VERIFIED_SEPARATE_RUN",
+      "claim": "178 logged GRPO steps and 5,745,115 cumulative tokens in the final trainer state",
+      "sources": [
+        "sources/qwen35/high_v2_32k_grpo_run_manifest.json",
+        "sources/qwen35/high_v2_32k_checkpoint178_trainer_state.json"
+      ]
+    },
+    {
+      "id": "qwen35_87step_completion_tokens",
+      "status": "UNVERIFIED",
+      "claim": "Approximately 2.56M generated completion tokens",
+      "sources": []
+    },
+    {
+      "id": "qwen35_87step_gpu_hours",
+      "status": "DERIVED_NOT_SOURCE_VERIFIED",
+      "claim": "Approximately 4.79 H200 GPU-hours",
+      "note": "4310.6635 seconds times four GPUs; preserved manifest does not record world size",
+      "sources": ["sources/qwen35/earlier_87step_grpo_run_manifest.json"]
+    },
+    {
+      "id": "qwen06_gsm8k100",
+      "status": "VERIFIED",
+      "claim": "Exact accuracy 22% to 36% to 47%; format rate 0% to 45% to 75%",
+      "sources": ["sources/qwen06/math_eval_100.json"]
+    },
+    {
+      "id": "nemotron12b_training",
+      "status": "VERIFIED_EXECUTION_ONLY",
+      "claim": "Completed 535-item SFT and retained step-60 GRPO checkpoints",
+      "sources": [
+        "sources/nemotron12b/sft_run_manifest.json",
+        "sources/nemotron12b/high_v2_grpo_checkpoint_status.json",
+        "sources/nemotron12b/high_v2_qwen32k_grpo_checkpoint_status.json"
+      ]
+    },
+    {
+      "id": "qwen38_serving",
+      "status": "VERIFIED_SYSTEMS_NOT_TRAINING",
+      "claim": "Dual-backend routing, concurrency and spillover tests passed",
+      "sources": [
+        "sources/qwen38_ops/GPU23_BALANCED_ROUTER_20260928.md",
+        "sources/qwen38_ops/GPU3_PRIMARY_AND_PEAK_SPILLOVER_20260928.md"
+      ]
+    }
+  ]
+}
