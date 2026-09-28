@@ -3,6 +3,8 @@
 Audited evidence from supervised fine-tuning and GRPO experiments across
 Qwen3.6-35B-A3B, Qwen3-0.6B, and Nemotron Nano 12B v2.
 
+Hugging Face artifacts: [Qwen 35B-class adapter](https://huggingface.co/hang010412/qwen3.6-35b-a3b-math-grpo-adapter) · [Qwen3-0.6B model](https://huggingface.co/hang010412/qwen3-0.6b-gsm8k-grpo-adapter) · [evidence dataset](https://huggingface.co/datasets/hang010412/h200-training-evidence)
+
 ## Qwen3.6-35B-A3B high-v2 line
 
 | Stage | Hard128 | MMLU-Pro64 | MuSR64 | BBEH61 |
@@ -45,4 +47,3 @@ base/SFT/GRPO improvement table was recovered; no performance claim is made.
 python scripts/verify_run_separation.py
 python scripts/validate_claims.py
 ```
-
