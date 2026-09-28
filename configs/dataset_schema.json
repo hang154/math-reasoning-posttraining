@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sanitized mathematics post-training row",
+  "type": "object",
+  "required": ["item_id", "prompt", "answer_candidates", "answer_type", "response_format"],
+  "properties": {
+    "item_id": {"type": "string"},
+    "prompt": {"type": "array", "items": {"type": "object", "required": ["role", "content"]}},
+    "answer_candidates": {"type": "array", "items": {"type": "string"}},
+    "answer_type": {"enum": ["choice", "multiple_choice", "short_answer"]},
+    "response_format": {"enum": ["answer_only", "reasoning", "qwen_thinking"]},
+    "reference_solution": {"type": ["string", "null"]},
+    "score": {"type": ["integer", "null"]}
+  }
+}

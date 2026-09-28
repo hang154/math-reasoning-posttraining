@@ -1,0 +1,12 @@
+model: Qwen/Qwen3-0.6B-Base
+dataset: openai/gsm8k
+split: train
+shuffle_seed: 42
+max_steps: 160
+per_device_train_batch_size: 8
+learning_rate: 2.0e-5
+warmup_ratio: 0.03
+weight_decay: 0.01
+precision: bfloat16
+max_length: 768
+target_format: "reasoning followed by #### <number>"

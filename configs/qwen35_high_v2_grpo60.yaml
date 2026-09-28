@@ -1,0 +1,83 @@
+model:
+  name_or_path: ${LOCAL_ARTIFACT_PATH}
+  init_adapter_path: ${LOCAL_ARTIFACT_PATH}
+  quantization: none
+  compute_dtype: bfloat16
+  attn_implementation: sdpa
+  trust_remote_code: false
+data:
+  sources:
+  - kind: jsonl
+    path: artifacts/grpo/controlled_34pt_experiment_v2/high_difficulty_four_point/grpo_ready.jsonl
+  require_gold: true
+  require_official_solution: false
+  exclude_visual: true
+  response_format: qwen_thinking
+  reasoning_token_budget: 1200
+  curriculum_context_path: configs/grpo/controlled_math_curriculum_context.v1.json
+  max_prompt_tokens: 3072
+  eval_fraction: 0.001
+  seed: 20260808
+  allowed_scores:
+  - 4
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.0
+  target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - in_proj_qkv
+  - in_proj_z
+  - in_proj_b
+  - in_proj_a
+  - out_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+training:
+  output_dir: ${LOCAL_ARTIFACT_PATH}
+  num_train_epochs: 1
+  max_steps: 60
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 1
+  steps_per_generation: 1
+  num_generations: 2
+  max_completion_tokens: 8192
+  learning_rate: 1.0e-06
+  lr_scheduler_type: cosine
+  warmup_ratio: 0.05
+  optim: adamw_torch_fused
+  gradient_checkpointing: true
+  max_grad_norm: 1.0
+  temperature: 1.0
+  top_p: 0.95
+  beta: 0.02
+  reward_weights:
+  - 1.0
+  - 0.1
+  - 0.2
+  - 0.2
+  - 0.8
+  use_official_solution_reward: true
+  scale_rewards: none
+  loss_type: dr_grpo
+  mask_truncated_completions: false
+  logging_steps: 1
+  log_completions: false
+  dataloader_num_workers: 4
+  dataloader_pin_memory: true
+  ddp_find_unused_parameters: false
+  tf32: true
+  use_vllm: true
+  vllm_mode: server
+  vllm_server_base_url: http://localhost:8000
+  vllm_server_timeout: 1200
+  vllm_importance_sampling_correction: true
+  vllm_importance_sampling_mode: token_truncate
+  generation_kwargs:
+    stop:
+    - </answer>
+    include_stop_str_in_output: true
